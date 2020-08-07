@@ -13,38 +13,16 @@ url="https://github/michzappa/minesweeper.git"
 license=('unknown')
 depends=(jre-openjdk)
 makedepends=(git jdk-openjdk)
-checkdepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
-source=("$pkgname-$pkgver.tar.gz"
-        "$pkgname-$pkgver.patch")
-noextract=()
-md5sums=()
-validpgpkeys=()
-
-prepare() {
-	cd "$pkgname-$pkgver"
-	patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
-}
+provides=(minesweeper)
+source=("git+$url")
+md5sums=('SKIP')
 
 build() {
-	cd "$pkgname-$pkgver"
+	cd "$pkgname"
 	./configure --prefix=/usr
 	make
 }
 
-check() {
-	cd "$pkgname-$pkgver"
-	make -k check
-}
-
 package() {
-	cd "$pkgname-$pkgver"
 	make DESTDIR="$pkgdir/" install
 }
