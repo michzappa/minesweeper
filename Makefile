@@ -39,8 +39,8 @@ JC = javac
 #
 
 CLASSES = \
-        src/minesweeper/BoardLayout.java \
-        src/minesweeper/MinesweeperGUI.java
+        ./src/minesweeper/BoardLayout.java \
+        ./src/minesweeper/MinesweeperGUI.java
 
 
 #
