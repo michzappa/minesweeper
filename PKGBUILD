@@ -9,7 +9,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc="Mostly follows the rules of minesweeper"
 arch=(x86_64)
-url="https://github/michzappa/minesweeper.git"
+url="https://github.com/michzappa/minesweeper.git"
 license=('unknown')
 depends=(jre-openjdk)
 makedepends=(git jdk-openjdk)
@@ -18,8 +18,7 @@ source=("git+$url")
 md5sums=('SKIP')
 
 build() {
-	cd "$pkgname"
-	./configure --prefix=/usr
+	cd "minesweeper"
 	make
 }
 
